@@ -13,7 +13,8 @@ const createUserModel = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
   }, {
     underscored: true,
-    tableName: 'Users'
+    tableName: 'Users',
+    timestamps: false,
   });
   User.associate = (models) => {
     User.hasMany(models.BlogPost,
