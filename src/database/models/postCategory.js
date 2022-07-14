@@ -9,7 +9,6 @@ const createPostCategoryModel = (sequelize, DataTypes) => {
     postId: DataTypes.INTEGER,
     categoryId: DataTypes.STRING,
   }, {
-    underscored: true,
     tableName: 'PostCategories',
     timestamps: false,
   });

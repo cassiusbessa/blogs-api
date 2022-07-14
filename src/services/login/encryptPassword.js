@@ -5,3 +5,5 @@ const encryptPassword = (password) => {
     const encryptedPassword = bcrypt.hashSync(password, salt);
     return encryptedPassword;
   };
+
+module.exports = encryptPassword;

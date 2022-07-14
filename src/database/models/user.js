@@ -6,13 +6,12 @@
    */
 const createUserModel = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    id: DataTypes.INTEGER,
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     displayName: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     image: DataTypes.STRING,
   }, {
-    underscored: true,
     tableName: 'Users',
     timestamps: false,
   });

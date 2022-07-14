@@ -2,6 +2,7 @@
 	"conventionalCommits.scopes": [
 		"database",
 		"src",
-		"error"
+		"error",
+		"login"
 	]
 }

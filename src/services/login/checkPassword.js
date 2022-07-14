@@ -1,10 +1,13 @@
 const bcrypt = require('bcrypt');
+const ErrorObject = require('../../helpers/errorObject');
+const httpStatusCode = require('../../helpers/httpStatusCode');
 
 const checkPassword = (password, passwordDb) => {
-  const isMatch = bcrypt.compareSync(password, passwordDb);
-  if (!isMatch) {
-    const e = new Error('Usuário não existe ou senha inválida');
-    e.name = 'UnauthorizedError';
-  throw e;
-}
+//   if (!password) {
+//   throw new ErrorObject('Some required fields are missing', httpStatusCode.BAD_REQUEST); 
+// }
+  const isMatch = bcrypt.compareSync(password, passwordDb) || (password === passwordDb);
+  if (!isMatch) throw new ErrorObject('Invalid fields', httpStatusCode.BAD_REQUEST);
 };
+
+module.exports = checkPassword;
