@@ -3,6 +3,7 @@
 		"database",
 		"src",
 		"error",
-		"login"
+		"login",
+		"users"
 	]
 }

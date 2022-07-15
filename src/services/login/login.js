@@ -5,14 +5,15 @@ const ErrorObject = require('../../helpers/errorObject');
 const httpStatusCode = require('../../helpers/httpStatusCode');
 const models = require('../../database/models');
 
-const login = async (email, password) => {
+const login = async (email, pass) => {
   checkEmail(email);
   const user = await models.User.findOne({ where: { email } });
   if (!user) {
   throw new ErrorObject('Invalid fields', httpStatusCode.BAD_REQUEST);
   }
-  checkPassword(password, user.password);
-  const token = createToken(user);
+  checkPassword(pass, user.password);
+  const { password, ...rest } = user;
+  const token = createToken(rest);
   return token;
 };
 
