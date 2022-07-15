@@ -1,6 +1,6 @@
 const checkEmail = require('./checkEmail');
 const checkPassword = require('./checkPassword');
-const createToken = require('./createToken');
+const createToken = require('../../helpers/createToken');
 const ErrorObject = require('../../helpers/errorObject');
 const httpStatusCode = require('../../helpers/httpStatusCode');
 const models = require('../../database/models');
