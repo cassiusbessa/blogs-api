@@ -3,7 +3,7 @@ const controllerWrapper = (callBack) => async (req, res, next) => {
     return await callBack(req, res, next);
   } catch (err) {
     if (!err.statusCode) {
-      err.message = 'Internal Server Error'; 
+      // err.message = 'Internal Server Error'; 
       err.statusCode = 500;
     }
     return next(err);
