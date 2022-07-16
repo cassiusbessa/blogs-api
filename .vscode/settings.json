@@ -4,6 +4,7 @@
 		"src",
 		"error",
 		"login",
-		"users"
+		"users",
+		"categories"
 	]
 }
