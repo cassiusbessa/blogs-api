@@ -36,9 +36,6 @@ module.exports = {
         type: Sequelize.DATE,
       },
     },
-    { createdAt: 'published',
-      updatedAt: 'updated',
-    },
     );
   },
 

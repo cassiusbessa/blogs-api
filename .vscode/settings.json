@@ -5,6 +5,7 @@
 		"error",
 		"login",
 		"users",
-		"categories"
+		"categories",
+		"posts"
 	]
 }

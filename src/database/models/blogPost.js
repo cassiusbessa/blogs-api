@@ -13,7 +13,10 @@ const createBlogPostModel = (sequelize, DataTypes) => {
     published: DataTypes.DATE,
     updated: DataTypes.DATE,
   }, {
-    tableName: 'BlogPost',
+    tableName: 'BlogPosts',
+    timestamps: true,
+    createdAt: 'published',
+    updatedAt: 'updated'
   });
   BlogPost.associate = (models) => {
     BlogPost.belongsTo(models.User, {

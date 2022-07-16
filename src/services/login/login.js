@@ -9,7 +9,7 @@ const login = async (email, pass) => {
   checkEmail(email);
   const user = await models.User.findOne({ where: { email } });
   if (!user) {
-  throw new ErrorObject('Invalid fields', httpStatusCode.BAD_REQUEST);
+    throw new ErrorObject('Invalid fields', httpStatusCode.BAD_REQUEST);
   }
   checkPassword(pass, user.password);
   const { password, ...rest } = user;
