@@ -13,6 +13,7 @@ const login = async (email, pass) => {
   }
   checkPassword(pass, user.password);
   const { password, ...rest } = user;
+  // console.log(rest);
   const newToken = token.createToken(rest);
   return newToken;
 };
