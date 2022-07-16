@@ -1,6 +1,6 @@
 const checkEmail = require('./checkEmail');
 const checkPassword = require('./checkPassword');
-const createToken = require('../../helpers/createToken');
+const token = require('../token');
 const ErrorObject = require('../../helpers/errorObject');
 const httpStatusCode = require('../../helpers/httpStatusCode');
 const models = require('../../database/models');
@@ -13,8 +13,8 @@ const login = async (email, pass) => {
   }
   checkPassword(pass, user.password);
   const { password, ...rest } = user;
-  const token = createToken(rest);
-  return token;
+  const newToken = token.createToken(rest);
+  return newToken;
 };
 
 module.exports = login;

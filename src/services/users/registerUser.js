@@ -1,5 +1,6 @@
 const models = require('../../database/models');
-const { encryptPassword, createToken, ErrorObject, httpStatusCode } = require('../../helpers');
+const { encryptPassword, ErrorObject, httpStatusCode } = require('../../helpers');
+const token = require('../token');
 const validateUser = require('./validateUser');
 
 const registerUser = async ({ displayName, email, password, image }) => {
@@ -13,8 +14,8 @@ const registerUser = async ({ displayName, email, password, image }) => {
     throw new ErrorObject('User already registered', httpStatusCode.CONFLICT);
   }
   const { password: pass, ...rest } = user;
-  const token = createToken(rest);
-  return token;
+  const newToken = token.createToken(rest);
+  return newToken;
 };
 
 module.exports = registerUser;
