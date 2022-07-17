@@ -6,6 +6,7 @@
 		"login",
 		"users",
 		"categories",
-		"posts"
+		"posts",
+		"services"
 	]
 }
