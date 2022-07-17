@@ -6,6 +6,7 @@ module.exports = {
       postId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        onDelete: 'cascade',
           references: {
             model: 'BlogPosts',
             key: 'id',

@@ -1,10 +1,11 @@
 const services = require('../../services');
 const controllerWrapper = require('../../helpers/controllerWrapper');
 
-const getPostById = controllerWrapper(async (req, res) => {
+const deletePost = controllerWrapper(async (req, res) => {
   const { id } = req.params;
-  const result = await services.posts.getPostById(id);
-  res.status(200).json(result);
+  const { dataValues: { id: userId } } = req.user;
+  await services.posts.deletePost(id, userId);
+  res.status(204).send();
 });
 
-module.exports = getPostById;
+module.exports = deletePost;

@@ -19,12 +19,6 @@ const editPost = async (postId, title, content, userId) => {
     where: { id: postId },
     attributes: { exclude: [models.User.password] }, 
   });
-//   if (!post) {
-//     throw new ErrorObject('Post does not exist', httpStatusCode.NOT_FOUND);
-//  }
-//   if (post.user.id !== userId) {
-//     throw new ErrorObject('Unauthorized user', httpStatusCode.UNAUTHORIZED);
-//   }
   editPostValidator(postId, title, content);
   checkUserPost(post, userId);
   post.title = title;

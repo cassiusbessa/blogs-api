@@ -16,7 +16,8 @@ const createBlogPostModel = (sequelize, DataTypes) => {
     tableName: 'BlogPosts',
     timestamps: true,
     createdAt: 'published',
-    updatedAt: 'updated'
+    updatedAt: 'updated',
+    onDelete: 'cascade', 
   });
   BlogPost.associate = (models) => {
     BlogPost.belongsTo(models.User, {
