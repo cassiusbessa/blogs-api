@@ -1,6 +1,7 @@
 const { ErrorObject, httpStatusCode, validEmail } = require('../../helpers');
 
 const validateUser = (password, email, displayName) => {
+  console.log('validateUser', password, email, displayName);
   if (password.length < 6) {
     throw new ErrorObject(
     '"password" length must be at least 6 characters long', httpStatusCode.BAD_REQUEST,

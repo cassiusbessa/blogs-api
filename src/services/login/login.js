@@ -12,8 +12,8 @@ const login = async (email, pass) => {
     throw new ErrorObject('Invalid fields', httpStatusCode.BAD_REQUEST);
   }
   checkPassword(pass, user.password);
-  const { password, ...rest } = user;
-  // console.log(rest);
+  const { dataValues: { password, ...rest } } = user;
+  console.log('>>>>>>>>>', rest);
   const newToken = token.createToken(rest);
   return newToken;
 };
