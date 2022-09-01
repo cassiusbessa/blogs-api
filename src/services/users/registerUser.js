@@ -14,7 +14,6 @@ const registerUser = async ({ displayName, email, password, image }) => {
     throw new ErrorObject('User already registered', httpStatusCode.CONFLICT);
   }
   const { dataValues: { password: pass, ...rest } } = user;
-  console.log(rest);
   const newToken = token.createToken(rest);
   return newToken;
 };
