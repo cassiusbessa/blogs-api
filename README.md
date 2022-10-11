@@ -3,7 +3,7 @@
 Blogs Api é um projeto desenvolvido em NodeJS, Express e Sequelize com o objetivo de criar uma API para um blog, onde é possível criar, editar, deletar e listar posts, além de criar, editar, deletar e listar usuários. O projeto foi desenvolvido com o intuito de aprender mais sobre NodeJS e suas funcionalidades, além de aprender mais sobre o desenvolvimento de APIs.
 
 ## Dê uma olhada na documentação:
-- [Documentação](https://abre.ai/blogs-api)
+- [Documentação](https://documenter.getpostman.com/view/23488574/2s83zjqhkR)
 
 ## Como rodar a aplicação?
 
