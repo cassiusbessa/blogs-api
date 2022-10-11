@@ -4,6 +4,7 @@ const token = require('../token');
 const validateUser = require('./validateUser');
 
 const registerUser = async ({ displayName, email, password, image }) => {
+  console.log('registerUser', displayName, email, password, image);
   validateUser(password, email, displayName);
   const passwordEncrypted = encryptPassword(password);
   const [user, created] = await models.User.findOrCreate({

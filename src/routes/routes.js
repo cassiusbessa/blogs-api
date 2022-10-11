@@ -7,8 +7,8 @@ const postsRoutes = require('./posts.routes');
 const router = express.Router();
 
 router.use('/login', loginRouter);
-router.use('/user', userRoutes);
+router.use('/users', userRoutes);
 router.use('/categories', categoriesRoutes);
-router.use('/post', postsRoutes);
+router.use('/posts', postsRoutes);
 
 module.exports = router;

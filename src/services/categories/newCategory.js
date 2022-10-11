@@ -5,7 +5,6 @@ const newCategory = async (name) => {
   if (!name) {
   throw new ErrorObject('"name" is required', httpStatusCode.BAD_REQUEST);
   }
-  console.log('name na service', name);
   const [category, created] = await models.Category.findOrCreate({
     where: { name },
     defaults: { name },
